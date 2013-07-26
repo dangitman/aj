@@ -9,7 +9,7 @@ public class Testing {
 		if(aNum == 1){
 			System.out.println("K again, ok");
 		}else{
-			System.out.println("Ya");
+			System.out.println("Ya.");
 		}
 		
 
