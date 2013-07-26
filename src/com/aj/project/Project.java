@@ -3,7 +3,7 @@ package com.aj.project;
  * The Project
  * @author Dan Perras
  */
-public class Project {
+public class Project extends Thread {
 
 	/**
 	 * Create a new {@link Project}
@@ -16,6 +16,6 @@ public class Project {
 	 * Start the project!
 	 */
 	public void start() {
-		//do something eventually
+		System.out.println("Doing something");
 	}
 }
