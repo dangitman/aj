@@ -10,7 +10,8 @@ public class ProjectService {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//TODO create and start the project!
+		Project p = new Project();
+		p.start();
 
 	}
 
