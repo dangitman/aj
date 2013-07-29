@@ -6,7 +6,7 @@ package com.aj.project;
 public class Project {
 	
 	boolean isRunning;
-	static int counter = 0;
+	int counter = 0;
 	
 	/**
 	 * Create a new {@link Project}
