@@ -6,8 +6,7 @@ package com.aj.project;
 public class Project {
 	
 	boolean isRunning;
-	int counter = 0;
-	
+		
 	/**
 	 * Create a new {@link Project}
 	 */
@@ -21,7 +20,8 @@ public class Project {
 	public void start() {
 
 		isRunning = true;
-	
+		int counter = 0; 
+		
 		System.out.println("Program has started");
 		
 		while(isRunning){
