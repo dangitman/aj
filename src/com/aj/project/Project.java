@@ -6,6 +6,7 @@ package com.aj.project;
 public class Project {
 	
 	boolean isRunning;
+	static int counter = 0;
 	
 	/**
 	 * Create a new {@link Project}
@@ -20,6 +21,7 @@ public class Project {
 	public void start() {
 
 		isRunning = true;
+	
 		System.out.println("Program has started");
 		
 		while(isRunning){
@@ -29,6 +31,13 @@ public class Project {
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
+			}
+			
+			counter++;
+			
+			if (counter == 4){
+				stop();
+				System.out.println("Program has stopped");
 			}
 		}
 	}
