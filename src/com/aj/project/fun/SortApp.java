@@ -16,6 +16,10 @@ public class SortApp {
 	public static void main(String[] args) {
 		int[] randomNumbers = getRandomNumbers();
 		int maxValue = sort(randomNumbers);
+		
+		for(int num : randomNumbers){
+			System.out.print(num + " ");
+		}
 		System.out.println("Max value is: " + maxValue);
 	}
 	
@@ -30,7 +34,22 @@ public class SortApp {
 	 */
 	private static int sort(int[] unsortedInts) throws IllegalArgumentException{
 		//TODO make it happen
-		return -1; //obv needs to change
+		
+		int i = 0;
+		int max = 0;
+		
+		if(unsortedInts.length == 0){
+			System.out.println("Illegal Operation"); //gonna add exception handling
+		}
+		
+		for(int nums : unsortedInts){
+			if(nums > unsortedInts[i]){
+				max = unsortedInts[i];
+				i++;
+			}
+		}
+		
+		return max; //obv needs to change
 	}
 	
 	/**
