@@ -1,5 +1,6 @@
 package com.aj.project.fun;
 
+import java.util.Arrays;
 import java.util.Random;
 /**
  * Class to sort and stuff and have fun
@@ -15,12 +16,13 @@ public class SortApp {
 	 */
 	public static void main(String[] args) {
 		int[] randomNumbers = getRandomNumbers();
-		int maxValue = sort(randomNumbers);
-
-		for(int num : randomNumbers){
-			System.out.print(num + " ");
-		}
+		System.out.println("Unsorted: " + Arrays.toString(randomNumbers));
+		
+		int maxValue = getMaxValue(randomNumbers);
 		System.out.println("Max value is: " + maxValue);
+		
+		int[] sortedNumbers = sort(randomNumbers);
+		System.out.println("Sorted: " + Arrays.toString(sortedNumbers));
 	}
 
 	/**
@@ -32,7 +34,7 @@ public class SortApp {
 	 * @return int
 	 * @throws IllegalArgumentException
 	 */
-	private static int sort(int[] unsortedInts) throws IllegalArgumentException{
+	private static int getMaxValue(int[] unsortedInts) throws IllegalArgumentException{
 		//TODO make it happen
 
 		int max = unsortedInts[0]; //set a default max
@@ -48,6 +50,19 @@ public class SortApp {
 		}
 
 		return max; 
+	}
+
+	/**
+	 * Takes an unsorted array of ints
+	 * and returns the sorted values.
+	 * If any array size of 0 is passed in,
+	 * an IllegalArgumentException is thrown.
+	 * @param unsortedInts
+	 * @return int
+	 * @throws IllegalArgumentException
+	 */
+	private static int[] sort(int[] unsortedInts) throws IllegalArgumentException {
+		return null;
 	}
 
 	/**
