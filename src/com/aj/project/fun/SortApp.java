@@ -36,7 +36,7 @@ public class SortApp {
 		//TODO make it happen
 
 		if(unsortedInts.length == 0){
-			throw new IllegalArgumentException("Array is empty");
+			throw new IllegalArgumentException("Array is empty.");
 		}
 
 		int max = unsortedInts[0]; //set a default max
