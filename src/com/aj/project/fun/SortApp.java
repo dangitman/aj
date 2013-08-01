@@ -35,12 +35,12 @@ public class SortApp {
 	private static int sort(int[] unsortedInts) throws IllegalArgumentException{
 		//TODO make it happen
 
-		int max = unsortedInts[0]; //set a default max
-
 		if(unsortedInts.length == 0){
-			System.out.println("Illegal Operation"); //gonna add exception handling
+			throw new IllegalArgumentException("Array is empty");
 		}
 
+		int max = unsortedInts[0]; //set a default max
+		
 		for(int i = 0; i < unsortedInts.length; i++){ //iterate through array
 			if(unsortedInts[i] > max){ //if the element in the array at i is greater than the max, the new max is assigned to that element
 				max = unsortedInts[i];
