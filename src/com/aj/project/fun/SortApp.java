@@ -44,7 +44,6 @@ public class SortApp {
 		for(int i = 0; i < unsortedInts.length; i++){ //iterate through array
 			if(unsortedInts[i] > max){ //if the element in the array at i is greater than the max, the new max is assigned to that element
 				max = unsortedInts[i];
-
 			}
 		}
 
