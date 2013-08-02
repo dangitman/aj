@@ -15,6 +15,7 @@ public class SortApp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		int[] randomNumbers = getRandomNumbers();
 		System.out.println("Unsorted: " + Arrays.toString(randomNumbers));
 		
@@ -62,7 +63,31 @@ public class SortApp {
 	 * @throws IllegalArgumentException
 	 */
 	private static int[] sort(int[] unsortedInts) throws IllegalArgumentException {
-		return null;
+		
+
+
+		if(unsortedInts.length == 0){
+			throw new IllegalArgumentException("Array is empty.");
+		}
+		
+		
+		int[] sortedArray = new int[unsortedInts.length]; //temp array
+		int sortedMin = unsortedInts[0]; //default minimum
+
+		for(int i = 0; i < unsortedInts.length-1; i++){
+			if(sortedMin < unsortedInts[i+1]){
+				sortedArray[i] = unsortedInts[i];
+				sortedArray[i+1] = unsortedInts[i+1];
+				sortedMin = sortedArray[i+1];
+			} else {
+				sortedArray[i] = unsortedInts[i+1];
+				sortedArray[i+1] = unsortedInts[i];
+				sortedMin = sortedArray[i+1];
+			}
+			
+		}
+		
+		return sortedArray;
 	}
 
 	/**
