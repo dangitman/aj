@@ -63,30 +63,31 @@ public class SortApp {
 	 * @throws IllegalArgumentException
 	 */
 	private static int[] sort(int[] unsortedInts) throws IllegalArgumentException {
-		
-
-
-		if(unsortedInts.length == 0){
+		if(unsortedInts.length == 0)
 			throw new IllegalArgumentException("Array is empty.");
-		}
 		
-		
-		int[] sortedArray = new int[unsortedInts.length]; //temp array
-		int sortedMin = unsortedInts[0]; //default minimum
+		//sorted array is the same length as the unsorted
+		int[] sortedArray = new int[unsortedInts.length];
+		//fill the sorted array with all MAX to make greater than comparison work
+		Arrays.fill(sortedArray, Integer.MAX_VALUE); 
 
-		for(int i = 0; i < unsortedInts.length-1; i++){
-			if(sortedMin < unsortedInts[i+1]){
-				sortedArray[i] = unsortedInts[i];
-				sortedArray[i+1] = unsortedInts[i+1];
-				sortedMin = sortedArray[i+1];
-			} else {
-				sortedArray[i] = unsortedInts[i+1];
-				sortedArray[i+1] = unsortedInts[i];
-				sortedMin = sortedArray[i+1];
+		//iterate over each unsorted int
+		for(int i = 0; i < unsortedInts.length; i++){
+			//need to iterate over each int in the sorted array
+			for(int j = 0; j < sortedArray.length; j++) {
+				//until an appropriate spot is found for this unsorted int
+				if(unsortedInts[i] < sortedArray[j]) {
+					//then move each sorted element over one spot
+					for(int k = sortedArray.length - 2; k >= j; k--) {
+						sortedArray[k + 1] = sortedArray[k];
+					}
+					//now put the unsorted int into its new sorted spot
+					sortedArray[j] = unsortedInts[i];
+					//break the sorted int for loop. since we already found a spot, we can stop iterating
+					break;
+				}
 			}
-			
 		}
-		
 		return sortedArray;
 	}
 
